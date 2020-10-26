@@ -1,0 +1,6 @@
+West = West
+East = East
+North = North
+South = South
+Report = ({0},{1}) {2} direction
+Delivery.report = '==' Delivery report '==' \n

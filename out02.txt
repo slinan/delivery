@@ -1,0 +1,4 @@
+== Reporte de entregas == 
+Dron fuera de distancia máxima
+(-1,-1) dirección Occidente
+(-4,-2) dirección Norte

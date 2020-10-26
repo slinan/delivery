@@ -1,0 +1,6 @@
+West = Occidente
+East = Oriente
+North = Norte
+South = Sur
+Report = ({0},{1}) dirección {2}
+Delivery.report = '==' Reporte de entregas '==' \n
