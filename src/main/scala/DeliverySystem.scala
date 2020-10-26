@@ -12,6 +12,7 @@ object DeliverySystem extends App {
   val InitialDronePositionX = 0
   val InitialDronePositionY = 0
   val InitialDroneOrientation = Direction.North
+  val MaxDroneCapacity = 3
   implicit val UserLang: Lang = Lang("es")
 
   println("Starting system")
@@ -56,7 +57,7 @@ object DeliverySystem extends App {
   }
 
   def writeDroneReport(report: String, reportName: String): Unit = {
-    if(report.split("\n").length > 3+1) {
+    if (report.split("\n").length > MaxDroneCapacity + 1) {
       Files.write(Paths.get(reportName), Messages("Drone.capacity.exceeded").getBytes(StandardCharsets.UTF_8))
     } else {
       Files.write(Paths.get(reportName), report.getBytes(StandardCharsets.UTF_8))
