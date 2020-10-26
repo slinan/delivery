@@ -2,7 +2,7 @@
 Drone delivery test
 
 Run
-````
+```
 sbt run
 ```
 
