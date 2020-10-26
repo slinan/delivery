@@ -5,3 +5,4 @@ South = South
 Report = ({0},{1}) {2} direction
 Delivery.report = '==' Delivery report '==' \n
 Drone.out.of.bounds = Drone out of bounds
+Drone.capacity.exceeded = Drone capacity exceeded

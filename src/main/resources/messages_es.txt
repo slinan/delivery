@@ -5,3 +5,4 @@ South = Sur
 Report = ({0},{1}) dirección {2}
 Delivery.report = '==' Reporte de entregas '==' \n
 Drone.out.of.bounds = Dron fuera de distancia máxima
+Drone.capacity.exceeded = Se superó la capacidad del dron

@@ -34,21 +34,19 @@ object DeliverySystem extends App {
           .split("\n")
           .map(i => {
             Drone.findPosition(i, x, y, direction) match {
-              case Success(position) => {
+              case Success(position) =>
                 x = position._1
                 y = position._2
                 direction = position._3
                 position
-              }
-              case Failure(exception) => {
+              case Failure(exception) =>
                 exception.getMessage
-              }
             }
           })
-          .map(r => r match {
+          .map {
             case (x: Int, y: Int, d: Direction) => localizeReport(x, y, d)
             case error: String => Messages(error)
-          })
+          }
           .mkString("\n"), reportName
     )
   }
@@ -58,7 +56,11 @@ object DeliverySystem extends App {
   }
 
   def writeDroneReport(report: String, reportName: String): Unit = {
-    Files.write(Paths.get(reportName), report.getBytes(StandardCharsets.UTF_8))
+    if(report.split("\n").length > 3+1) {
+      Files.write(Paths.get(reportName), Messages("Drone.capacity.exceeded").getBytes(StandardCharsets.UTF_8))
+    } else {
+      Files.write(Paths.get(reportName), report.getBytes(StandardCharsets.UTF_8))
+    }
   }
 
   def localizeReport(x: Int, y: Int, d: Direction): String = {
